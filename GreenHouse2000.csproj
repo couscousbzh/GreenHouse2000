@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <AssemblyName>Bouineur2000</AssemblyName>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Bouineur2000</RootNamespace>
+    <ProjectTypeGuids>{b69e3092-b931-443c-abe7-7e7b65f2a37f};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{90317342-1968-4CB4-AF29-FBDF6367018D}</ProjectGuid>
+    <TargetFrameworkVersion>v4.3</TargetFrameworkVersion>
+    <NetMfTargetsBaseDir Condition="'$(NetMfTargetsBaseDir)'==''">$(MSBuildExtensionsPath32)\Microsoft\.NET Micro Framework\</NetMfTargetsBaseDir>
+    <DeployDevice>Netduino</DeployDevice>
+    <DeployTransport>USB</DeployTransport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <Import Project="$(NetMfTargetsBaseDir)$(TargetFrameworkVersion)\CSharp.Targets" />
+  <ItemGroup>
+    <Compile Include="lib\DHT22Sensor\Dht11Sensor.cs" />
+    <Compile Include="lib\DHT22Sensor\Dht22Sensor.cs" />
+    <Compile Include="lib\DHT22Sensor\DhtSensor.cs" />
+    <Compile Include="lib\DHT22Sensor\PullUpResistor.cs" />
+    <Compile Include="lib\LCD\LCD.cs" />
+    <Compile Include="lib\RCSwitch\RCSwitch.cs" />
+    <Compile Include="utilities\Ntp.cs" />
+    <Compile Include="utilities\SDCardLogger.cs" />
+    <Compile Include="utilities\ThingSpeakClient\ThingSpeakClient.cs" />
+    <Compile Include="lib\UltraSoundSensor\HC_SR04.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="utilities\Stopwatch.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Igloocoder.MF.LogEntries, Version=0.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Igloocoder.MF.LogEntries.0.0.1\lib\Igloocoder.MF.LogEntries.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Igloocoder.MF.TcpClient, Version=0.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Igloocoder.MF.TcpClient.0.0.4\lib\Igloocoder.MF.TcpClient.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SPOT.Hardware" />
+    <Reference Include="Microsoft.SPOT.Hardware.PWM" />
+    <Reference Include="Microsoft.SPOT.Hardware.SerialPort" />
+    <Reference Include="Microsoft.SPOT.Native" />
+    <Reference Include="Microsoft.SPOT.Net" />
+    <Reference Include="SecretLabs.NETMF.Hardware" />
+    <Reference Include="SecretLabs.NETMF.Hardware.NetduinoPlus, Version=4.3.1.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="GoBus" />
+    <Reference Include="System.IO" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="cablage\lcd_schema.png" />
+    <Content Include="lib\DHT22Sensor\Aide.txt" />
+    <Content Include="lib\DHT22Sensor\IMG_20150720_193%2807-21-09-31-42%29.jpg" />
+    <Content Include="lib\DHT22Sensor\SensorWiring.png" />
+    <Content Include="lib\RCSwitch\keywords.txt" />
+    <Content Include="utilities\ThingSpeakClient\aide.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,22 @@
+﻿
+
+http://forums.netduino.com/index.php?showtopic=2560
+
+
+
+DHT22 sensor: 
+Pin 1 -> VCC 
+Pin 2 -> D0 and D1 
+Pin 3 -> 
+Pin 4 -> Ground 
+
++ 1K resistor between Pin 1 and Pin 2. --> mettre alors PullUpResistor.External
+
+
+
+
+Autre :
+
+https://plot.ly/arduino/dht22-temperature-tutorial/
+
+http://www.manuel-esteban.com/lire-une-sonde-dht22-avec-un-raspberry-pi/
